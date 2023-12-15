@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<script>
+
+while(true)
+{
+	var num1 = parseFloat(window.prompt("Enter the first number"));
+	while (isNaN(num1))
+	 {
+	    alert("Please enter a valid number for the first number");
+	    num1 = parseFloat(window.prompt("Enter the first number"));
+	}
+
+	var num2 = parseFloat(window.prompt("Enter the second number"));
+	while (isNaN(num2)) 
+	{
+	    alert("Please enter a valid number for the second number");
+	    num2 = parseFloat(window.prompt("Enter the second number"));
+	}
+
+	var operation = window.prompt("Choose the operation (+, -, *, /)");
+	while (!["+","-","*","/"].includes(operation)) 
+	{
+	    alert("Please enter a valid operation (+, -, *, /)");
+	    operation = window.prompt("Choose the operation (+, -, *, /)");
+	}
+
+	function add(num1, num2) 
+	{
+	    return num1 + num2;
+	}
+
+	function subtract(num1, num2) 
+	{
+	    return num1 - num2;
+	}
+
+	function multiply(num1, num2) 
+	{
+	    return num1 * num2;
+	}
+
+	function divide(num1, num2) 
+	{
+	    if (num2 === 0) 
+	    {
+	        return "Cannot divide by zero";
+	    }
+	    return num1 / num2;
+	}
+
+	var result;
+	switch (operation) {
+	    case "+":
+	        result = add(num1, num2);
+	        break;
+	    case "-":
+	        result = subtract(num1, num2);
+	        break;
+	    case "*":
+	        result = multiply(num1, num2);
+	        break;
+	    case "/":
+	        result = divide(num1, num2);
+	        break;
+	}
+
+	alert("Result: " + result);
+}
+</script>
+
+</body>
+
+</html>
